@@ -46,39 +46,35 @@
             </thead>
 
             <tbody>
-               <tr>
-                    <td>1</td>
-                    <td>EA 7656</td>
-                    <td>2022-08-19</td>
-                    <td>Azam Products</td>
-                    <td>Drink</td>
-                    <td>20</td>
-                    <td>Azam Energy</td>
-                    <td class="text-center"><span class="badge bg-warning text-dark py-2 px-2">Pending</span></td>
-                    <td class="text-center">
-                        <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
-                        <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
-                    </td>
-                </tr>
+                @forelse ($purchases as $purchase)
+                    <tr>
+                        <td> {{ $loop->iteration }} </td>
+                        <td> {{ $purchase->pNo }} </td>
+                        <td> {{ $purchase->created_at }} </td>
+                        <td> {{ $purchase->supName }} </td>
+                        <td> {{ $purchase->catName }} </td>
+                        <td> {{ $purchase->qty }} </td>
+                        <td> {{ $purchase->prodName }} </td>
+                        <td class="text-center">
+                            @if ($purchase->status == "PENDING")
+                                <span class="badge bg-warning text-dark py-2 px-2">Pending</span>
+                            @else
+                                <span class="badge bg-primary text-dark py-2 px-2">Approved</span>
+                            @endif
+                        </td>
+                        <td class="text-center">
+                            @if ($purchase->status == "PENDING")
+                                <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
+                                <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
+                            @else
+                                
+                            @endif
+                        </td>
+                    </tr>
+                @empty
+                    
+                @endforelse
 
-                <tr>
-                    <td>2</td>
-                    <td>EA 7678</td>
-                    <td>2022-08-20</td>
-                    <td>New Balance</td>
-                    <td>Clothes</td>
-                    <td>35</td>
-                    <td>Liverpool Jersey</td>
-
-                    <td class="text-center">
-                        <span class="badge bg-primary text-dark py-2 px-2">Approved</span>
-                    </td>
-
-                    <td class="text-center">
-                        
-                    </td>
-
-                </tr>
             </tbody>
 
         </table>
