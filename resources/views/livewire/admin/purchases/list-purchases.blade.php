@@ -1,5 +1,7 @@
 <div>
 
+    <x-loading-indicator></x-loading-indicator>
+
     <!-- [ breadcrumb ] start -->
     <div class="page-header">
         <div class="page-block">
