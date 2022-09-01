@@ -1,4 +1,4 @@
-<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
+<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark position-sticky">
 		
 			
     <div class="m-header">

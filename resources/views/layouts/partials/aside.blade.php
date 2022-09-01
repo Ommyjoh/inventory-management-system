@@ -1,4 +1,4 @@
-<nav class="pcoded-navbar  ">
+<nav class="pcoded-navbar">
     <div class="navbar-wrapper  ">
         <div class="navbar-content scroll-div " >
             
@@ -26,12 +26,6 @@
                     </ul>
                 </li>
 
-                <li class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-users"></i></span><span class="pcoded-mtext">Manage Customers</span></a>
-                    <ul class="pcoded-submenu">
-                        <li><a href="{{ route('admin.listCustomers')}}">All Customers</a></li>
-                    </ul>
-                </li>
 
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-shopping-bag"></i></span><span class="pcoded-mtext">Manage Categories</span></a>
@@ -51,6 +45,18 @@
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-cart-arrow-down"></i></span><span class="pcoded-mtext">Manage Purchases</span></a>
                     <ul class="pcoded-submenu">
                         <li><a href="{{ route('admin.listPurchases') }}">All Purchases</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Customers</label>
+                </li>
+
+                <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-users"></i></span><span class="pcoded-mtext">Manage Customers</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="{{ route('admin.listCustomers')}}">All Customers</a></li>
                     </ul>
                 </li>
 
