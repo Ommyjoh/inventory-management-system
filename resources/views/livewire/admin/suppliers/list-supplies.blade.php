@@ -58,8 +58,8 @@
                     <td><a href="mailto:{{ $supplier->email }}" class="text-black">{{ $supplier->email }}</a></td>
                     <td>{{ $supplier->address }}</td>
                     <td>
-                        <a wire:click = "editSupplierForm({{ $supplier }})" href="#"><i class="nav-icon fa fa-edit text-primary mr-2" title="edit"></i></a>
-                        <a wire:click = "showDeleteConfirmation({{ $supplier->id }})" href="#"><i class="nav-icon fa fa-trash text-danger" title="delete"></i></a>
+                        <a wire:click.prevent = "editSupplierForm({{ $supplier }})" href="#"><i class="nav-icon fa fa-edit text-primary mr-2" title="edit"></i></a>
+                        <a wire:click.prevent = "showDeleteConfirmation({{ $supplier->id }})" href="#"><i class="nav-icon fa fa-trash text-danger" title="delete"></i></a>
                     </td>
                 </tr>
 

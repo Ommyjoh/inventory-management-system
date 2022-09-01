@@ -64,7 +64,7 @@
                         </td>
                         <td class="text-center">
                             @if ($purchase->status == "PENDING")
-                                <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
+                                <a wire:click.prevent = "approvePurchaseAlert({{$purchase->id}})" href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
                                 <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
                             @else
                                 
@@ -72,7 +72,12 @@
                         </td>
                     </tr>
                 @empty
-                    
+                    <td colspan="9" class="text-center">
+                        <div class="d-flex flex-column align-items-center justify-content-center">
+                            <img style="width: 200px" src="{{ asset('backend/dist/assets/images/notfound.png') }}" alt="">
+                            <span class="mt-2">No Purchase Records!</span>
+                        </div>
+                    </td>
                 @endforelse
 
             </tbody>
@@ -81,3 +86,63 @@
     </div>
 
 </div>
+
+@push('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    window.addEventListener('approvalConfirmation', event=>{
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success ml-2',
+            cancelButton: 'btn btn-danger mr-2'
+        },
+        buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+        title: 'Approve this purchase?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, approve!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+        }).then((result) => {
+        if (result.isConfirmed) {
+            
+            Livewire.emit('approve');
+
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Purchase not approved!',
+            'error'
+            )
+        }
+        })
+    })
+
+
+    window.addEventListener('approvalSuccessModal', event=>{
+
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+        swalWithBootstrapButtons.fire(
+        'Approved!',
+        event.detail.message,
+        'success'
+    )
+
+    })
+</script>
+
+@endpush
