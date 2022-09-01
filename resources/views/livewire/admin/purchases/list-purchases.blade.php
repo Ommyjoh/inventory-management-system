@@ -27,6 +27,18 @@
             <div class="px-2">
                 <h5>Purchase All Data</h5>
             </div>
+
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button wire:click = "statusFilter" type="button" class="btn btn-outline-dark {{ is_null($status) ? 'active' : ' ' }}">All 
+                    <span class="badge rounded-pill bg-info">{{ $allPurchases }}</span>
+                </button>
+                <button wire:click = "statusFilter('pending')" type="button" class="btn btn-outline-dark {{ ($status == 'pending') ? ' active' : ' ' }}">Pending
+                    <span class="badge rounded-pill bg-warning">{{ $pendingPurchases }}</span>
+                </button>
+                <button wire:click = "statusFilter('approved')" type="button" class="btn btn-outline-dark {{ ($status == 'approved') ? ' active ' : ' ' }}">Approved
+                    <span class="badge rounded-pill bg-primary">{{ $approvedPurchases }}</span>
+                </button>
+            </div>
         </div>
 
         <table class="table table-bordered">
@@ -59,13 +71,13 @@
                             @if ($purchase->status == "PENDING")
                                 <span class="badge bg-warning text-dark py-2 px-2">Pending</span>
                             @else
-                                <span class="badge bg-primary text-dark py-2 px-2">Approved</span>
+                                <span class="badge bg-primary text-white py-2 px-2">Approved</span>
                             @endif
                         </td>
                         <td class="text-center">
                             @if ($purchase->status == "PENDING")
                                 <a wire:click.prevent = "approvePurchaseAlert({{$purchase->id}})" href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
-                                <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
+                                <a wire:click.prevent = "deleteAlert({{$purchase->id}})" href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
                             @else
                                 
                             @endif
@@ -85,7 +97,13 @@
         </table>
     </div>
 
+    <div class="d-flex justify-content-center">
+        {{ $purchases->links() }}
+    </div>
+
 </div>
+
+<x-delete-confirmation></x-delete-confirmation>
 
 @push('js')
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
