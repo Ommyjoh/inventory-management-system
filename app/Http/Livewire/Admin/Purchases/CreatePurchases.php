@@ -6,6 +6,7 @@ use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Purchase;
+use App\Models\Stock;
 use App\Models\Supplier;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,7 +15,7 @@ class CreatePurchases extends Component
     public $randNumber;
     public $state = [];
     public $supId, $catId, $prodId, $qty, $unitPrice, $discPrice;
-    public $supName, $catName, $prodName;
+    public $supName, $catName, $prodName, $Sid;
 
     public $rules = [
         'qty' => 'required',
@@ -66,16 +67,30 @@ class CreatePurchases extends Component
         $totalPrice = $initialPrice - intval($this->discPrice);
         $status = "PENDING";
 
-        Purchase::create([
-            'supplier_id' => $this->state['supId'],
-            'category_id' => $this->state['catId'],
-            'product_id' => $this->state['prodId'],
-            'pNo' => $this->randNumber,
-            'qty' => $this->qty,
-            'discount' => $this->discPrice,
-            'totalPrice' => $totalPrice,
-            'status' => $status
-        ]);
+        // Purchase::create([
+        //     'supplier_id' => $this->state['supId'],
+        //     'category_id' => $this->state['catId'],
+        //     'product_id' => $this->state['prodId'],
+        //     'pNo' => $this->randNumber,
+        //     'qty' => $this->qty,
+        //     'discount' => $this->discPrice,
+        //     'totalPrice' => $totalPrice,
+        //     'status' => $status
+        // ]);
+
+        $stock = Stock::
+                whereSupplierId($this->state['supId'])
+                ->whereCategoryId($this->state['catId'])
+                ->whereProductId($this->state['prodId'])
+                ->get()->toArray();
+
+        if (empty($stock)) {
+            dd("Nothing here");
+        } else {
+            dd($stock[0]['supplier_id']);
+            
+        }
+        
 
         $this->dispatchBrowserEvent('success', ['message'=>'Purchase Added Successfully!']);
         $this->reset();
