@@ -67,16 +67,16 @@ class CreatePurchases extends Component
         $totalPrice = $initialPrice - intval($this->discPrice);
         $status = "PENDING";
 
-        // Purchase::create([
-        //     'supplier_id' => $this->state['supId'],
-        //     'category_id' => $this->state['catId'],
-        //     'product_id' => $this->state['prodId'],
-        //     'pNo' => $this->randNumber,
-        //     'qty' => $this->qty,
-        //     'discount' => $this->discPrice,
-        //     'totalPrice' => $totalPrice,
-        //     'status' => $status
-        // ]);
+        Purchase::create([
+            'supplier_id' => $this->state['supId'],
+            'category_id' => $this->state['catId'],
+            'product_id' => $this->state['prodId'],
+            'pNo' => $this->randNumber,
+            'qty' => $this->qty,
+            'discount' => $this->discPrice,
+            'totalPrice' => $totalPrice,
+            'status' => $status
+        ]);
 
         $stock = Stock::
                 whereSupplierId($this->state['supId'])
@@ -85,10 +85,27 @@ class CreatePurchases extends Component
                 ->get()->toArray();
 
         if (empty($stock)) {
-            dd("Nothing here");
+
+            Stock::create([
+                'supplier_id' => $this->state['supId'],
+                'category_id' => $this->state['catId'],
+                'product_id' => $this->state['prodId'],
+                'in_qty' => $this->qty,
+                'out_qty' => 0,
+                'stock' => $this->qty,
+            ]);
+
         } else {
-            dd($stock[0]['supplier_id']);
-            
+
+            $qty = $this->qty + $stock[0]['in_qty'];
+            $stockQty = $this->qty + $stock[0]['stock'];
+
+            $updateStock = Stock::find($stock[0]['id']);
+
+            $updateStock->update([
+                'in_qty' => $qty,
+                'stock' => $stockQty,
+            ]);
         }
         
 
