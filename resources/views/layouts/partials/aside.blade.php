@@ -68,7 +68,7 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-archive"></i></span><span class="pcoded-mtext">Manage Stocks</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="layout-vertical.html" target="_blank">Stocks</a></li>
+                        <li><a href="{{ route('admin.listStocks') }}">All Stocks</a></li>
                     </ul>
                 </li>
 

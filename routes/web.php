@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\Customers\ListCustomers;
 use App\Http\Livewire\Admin\Products\ListProducts;
 use App\Http\Livewire\Admin\Purchases\CreatePurchases;
 use App\Http\Livewire\Admin\Purchases\ListPurchases;
+use App\Http\Livewire\Admin\Stock\ListStocks;
 use App\Http\Livewire\Admin\Suppliers\ListSupplies;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,5 @@ Route::get('admin/listproducts', ListProducts::class)->name('admin.listProducts'
 Route::get('admin/listpurchases', ListPurchases::class)->name('admin.listPurchases');
 
 Route::get('admin/createpurchases', CreatePurchases::class)->name('admin.createPurchases');
+
+Route::get('admin/liststocks', ListStocks::class)->name('admin.listStocks');
