@@ -3,17 +3,17 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Purchase extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'supName',
-        'catName',
-        'prodName',
+        'supplier_id',
+        'category_id',
+        'product_id',
         'qty',
         'pNo',
         'totalPrice',
@@ -21,8 +21,21 @@ class Purchase extends Model
         'status'
     ];
 
+    public function supplier(){
+        return $this->belongsTo('App\Models\Supplier');
+    }
+
+    public function category(){
+        return $this->belongsTo('App\Models\Category');
+    }
+
+    public function product(){
+        return $this->belongsTo('App\Models\Product');
+    }
+
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d-m-Y');
     }
+
 }

@@ -12,13 +12,13 @@
                                 <label for="Name">Purchase No</label>
                                 <input value="{{ $randNumber }}" type="text" class="form-control" readonly>
                             </div>
-    
+
                             <div class="row col-lg-6">
                                 <label for="Name">Supplier Name</label>
-                                <select wire:model.defer = "state.supName" class="form-select" aria-label="Default select example">
+                                <select wire:model = "state.supId" class="form-select" aria-label="Default select example">
                                     <option selected>Choose supplier..</option>
                                     @foreach ($suppliers as $supplier)
-                                        <option value="{{$supplier->name}}">{{ $supplier->name }}</option>
+                                        <option value="{{$supplier->id}}">{{ $supplier->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -27,20 +27,20 @@
                         <div class="d-flex justify-content-between">
                             <div class="row col-lg-6">
                                 <label for="Name">Category Name</label>
-                                <select wire:model.defer = "state.catName" class="form-select" aria-label="Default select example">
+                                <select wire:model.defer = "state.catId" class="form-select" aria-label="Default select example">
                                     <option selected>Choose category..</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
     
                             <div class="row col-lg-6">
                                 <label for="Name">Product Name</label>
-                                <select wire:model.defer = "state.prodName" class="form-select" aria-label="Default select example">
+                                <select wire:model.defer = "state.prodId" class="form-select" aria-label="Default select example">
                                     <option selected>Choose product..</option>
                                     @foreach ($products as $product)
-                                        <option value="{{ $product->name }}">{{ $product->name }}</option>
+                                        <option value="{{ $product->id }}">{{ $product->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

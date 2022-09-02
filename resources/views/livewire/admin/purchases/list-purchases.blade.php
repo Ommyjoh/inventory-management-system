@@ -65,10 +65,10 @@
                         <td> {{ $loop->iteration }} </td>
                         <td> {{ $purchase->pNo }} </td>
                         <td> {{ $purchase->created_at }} </td>
-                        <td> {{ $purchase->supName }} </td>
-                        <td> {{ $purchase->catName }} </td>
+                        <td> {{ $purchase->supplier->name }} </td>
+                        <td> {{ $purchase->category->name }} </td>
                         <td> {{ $purchase->qty }} </td>
-                        <td> {{ $purchase->prodName }} </td>
+                        <td> {{ $purchase->product->name }} </td>
                         <td class="text-center">
                             @if ($purchase->status == "PENDING")
                                 <span class="badge bg-warning text-dark py-2 px-2">Pending</span>
