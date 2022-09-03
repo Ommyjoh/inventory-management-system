@@ -77,36 +77,6 @@ class CreatePurchases extends Component
             'totalPrice' => $totalPrice,
             'status' => $status
         ]);
-
-        $stock = Stock::
-                whereSupplierId($this->state['supId'])
-                ->whereCategoryId($this->state['catId'])
-                ->whereProductId($this->state['prodId'])
-                ->get()->toArray();
-
-        if (empty($stock)) {
-
-            Stock::create([
-                'supplier_id' => $this->state['supId'],
-                'category_id' => $this->state['catId'],
-                'product_id' => $this->state['prodId'],
-                'in_qty' => $this->qty,
-                'out_qty' => 0,
-                'stock' => $this->qty,
-            ]);
-
-        } else {
-
-            $qty = $this->qty + $stock[0]['in_qty'];
-            $stockQty = $this->qty + $stock[0]['stock'];
-
-            $updateStock = Stock::find($stock[0]['id']);
-
-            $updateStock->update([
-                'in_qty' => $qty,
-                'stock' => $stockQty,
-            ]);
-        }
         
 
         $this->dispatchBrowserEvent('success', ['message'=>'Purchase Added Successfully!']);

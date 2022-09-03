@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Purchases;
 
+use App\Models\Stock;
 use Livewire\Component;
 use App\Models\Purchase;
 use Livewire\WithPagination;
@@ -11,22 +12,51 @@ class ListPurchases extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     public $listeners = ['approve' => 'approvePurchase', 'deleted' => 'deletePurchase'];
-    public $approvedId;
+    public $approvePurchase;
     public $deleteId;
     public $status;
     // protected $queryString = ['status'];
 
-    public function approvePurchaseAlert($id){
+    public function approvePurchaseAlert(Purchase $purchase){
 
-        $this->approvedId = $id;
+        $this->approvePurchase = $purchase;
         $this->dispatchBrowserEvent('approvalConfirmation');
     }
 
     public function approvePurchase(){
 
-        $purchase = Purchase::findOrFail($this->approvedId);
-        $purchase->status = "APPROVED";
-        $purchase->save();
+        $this->approvePurchase->status = "APPROVED";
+        $this->approvePurchase->save();
+
+        $stock = Stock::
+                whereSupplierId($this->approvePurchase->supplier_id)
+                ->whereCategoryId($this->approvePurchase->category_id)
+                ->whereProductId($this->approvePurchase->product_id)
+                ->get()->toArray();
+
+        if (empty($stock)) {
+
+            Stock::create([
+                'supplier_id' => $this->approvePurchase->supplier_id,
+                'category_id' => $this->approvePurchase->category_id,
+                'product_id' => $this->approvePurchase->product_id,
+                'in_qty' => $this->approvePurchase->qty,
+                'out_qty' => 0,
+                'stock' => $this->approvePurchase->qty,
+            ]);
+
+        } else {
+
+            $qty = $this->approvePurchase->qty + $stock[0]['in_qty'];
+            $stockQty = $this->approvePurchase->qty + $stock[0]['stock'];
+
+            $updateStock = Stock::find($stock[0]['id']);
+
+            $updateStock->update([
+                'in_qty' => $qty,
+                'stock' => $stockQty,
+            ]);
+        }
 
         $this->dispatchBrowserEvent('approvalSuccessModal', ['message'=>'Purchase Approved Successful!']);
     }

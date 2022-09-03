@@ -78,7 +78,7 @@
                         </td>
                         <td class="text-center">
                             @if ($purchase->status == "PENDING")
-                                <a wire:click.prevent = "approvePurchaseAlert({{$purchase->id}})" href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
+                                <a wire:click.prevent = "approvePurchaseAlert({{$purchase}})" href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
                                 <a wire:click.prevent = "deleteAlert({{$purchase->id}})" href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
                             @else
                                 
