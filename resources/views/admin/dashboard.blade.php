@@ -9,217 +9,210 @@
                                 <h5 class="m-b-10">Dashboard Analytics</h5>
                             </div>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#!">Dashboard Analytics</a></li>
+                                <li class="breadcrumb-item"><a href="#!">Summary</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- [ breadcrumb ] end -->
+
             <!-- [ Main Content ] start -->
             <div class="row">
                 <!-- table card-1 start -->
                 <div class="col-md-12 col-xl-4">
-                    <div class="card flat-card">
-                        <div class="row-table">
-                            <div class="col-sm-6 card-body br">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-eye text-c-green mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>10k</h5>
-                                        <span>Visitors</span>
-                                    </div>
+                   <div class="card flat-card">
+                    <div class="row-table">
+                        <div class="small-box bg-primary text-white">
+                            <div class="inner p-4">
+                                <div class="d-flex justify-center justify-content-between">
+                                    <h2 class="text-white">34</h2>
+                                    <i class="feather icon-layers"></i>
                                 </div>
+                                <p class="fs-6">Total Products</p>
                             </div>
-                            <div class="col-sm-6 card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-music text-c-red mb-1 d-block"></i>
+                            <div class="bg-dark p-2">
+                                <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                                    <div>
+                                        View all products 
                                     </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>100%</h5>
-                                        <span>Volume</span>
+                                    <div>
+                                        <i class="fs-5 fas fa-arrow-circle-right"></i>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row-table">
-                            <div class="col-sm-6 card-body br">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-file-text text-c-blue mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>2000 +</h5>
-                                        <span>Files</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-mail text-c-yellow mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>120</h5>
-                                        <span>Mails</span>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <!-- widget primary card start -->
-                    <div class="card flat-card widget-primary-card">
-                        <div class="row-table">
-                            <div class="col-sm-3 card-body">
-                                <i class="feather icon-star-on"></i>
-                            </div>
-                            <div class="col-sm-9">
-                                <h4>4000 +</h4>
-                                <h6>Ratings Received</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- widget primary card end -->
+                   </div>
                 </div>
                 <!-- table card-1 end -->
-        
+
                 <!-- table card-2 start -->
                 <div class="col-md-12 col-xl-4">
                     <div class="card flat-card">
-                        <div class="row-table">
-                            <div class="col-sm-6 card-body br">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-share-2 text-c-blue mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>1000</h5>
-                                        <span>Shares</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-wifi text-c-blue mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>600</h5>
-                                        <span>Network</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row-table">
-                            <div class="col-sm-6 card-body br">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-rotate-ccw text-c-blue mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>3550</h5>
-                                        <span>Returns</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-shopping-cart text-c-blue mb-1 d-blockz"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>100%</h5>
-                                        <span>Order</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                     <div class="row-table">
+                         <div class="small-box bg-danger text-white">
+                             <div class="inner p-4">
+                                 <div class="d-flex justify-center justify-content-between">
+                                     <h2 class="text-white">10</h2>
+                                     <i class="feather icon-box"></i>
+                                 </div>
+                                 <p class="fs-6">Low Stock Products</p>
+                             </div>
+                             <div class="bg-dark p-2">
+                                 <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                                     <div>
+                                         View all products 
+                                     </div>
+                                     <div>
+                                         <i class="fs-5 fas fa-arrow-circle-right"></i>
+                                     </div>
+                                 </a>
+                             </div>
+                         </div>
+                     </div>
                     </div>
-                    <!-- widget-success-card start -->
-                    <div class="card flat-card widget-purple-card">
-                        <div class="row-table">
-                            <div class="col-sm-3 card-body">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div class="col-sm-9">
-                                <h4>17</h4>
-                                <h6>Achievements</h6>
-                            </div>
-                        </div>
+                 </div>
+                 <!-- table card-2 end -->
+
+                 <!-- table card-3 start -->
+                <div class="col-md-12 col-xl-4">
+                    <div class="card flat-card">
+                     <div class="row-table">
+                         <div class="small-box bg-success text-white">
+                             <div class="inner p-4">
+                                 <div class="d-flex justify-center justify-content-between">
+                                     <h2 class="text-white">8</h2>
+                                     <i class="feather icon-codepen"></i>
+                                 </div>
+                                 <p class="fs-6">Most Stock Products</p>
+                             </div>
+                             <div class="bg-dark p-2">
+                                 <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                                     <div>
+                                         View all products 
+                                     </div>
+                                     <div>
+                                         <i class="fs-5 fas fa-arrow-circle-right"></i>
+                                     </div>
+                                 </a>
+                             </div>
+                         </div>
+                     </div>
                     </div>
-                    <!-- widget-success-card end -->
-                </div>
-        
+                 </div>
+                 <!-- table card-3 end -->
+
+                <!-- table card-4 start -->
                 <div class="col-md-12 col-xl-4">
                     <div class="card flat-card">
                         <div class="row-table">
-                            <div class="col-sm-6 card-body br">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-eye text-c-green mb-1 d-block"></i>
+                            <div class="small-box bg-secondary text-white">
+                                <div class="inner p-4">
+                                    <div class="d-flex justify-center justify-content-between">
+                                        <h2 class="text-white">12</h2>
+                                        <i class="nav-icon fa fa-cart-arrow-down "></i>
                                     </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>10k</h5>
-                                        <span>Visitors</span>
-                                    </div>
+                                    <p class="fs-6">Total Suppliers</p>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-music text-c-red mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>100%</h5>
-                                        <span>Volume</span>
-                                    </div>
+                                <div class="bg-dark p-2">
+                                    <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                                        <div>
+                                            View all products 
+                                        </div>
+                                        <div>
+                                            <i class="fs-5 fas fa-arrow-circle-right"></i>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="row-table">
-                            <div class="col-sm-6 card-body br">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-file-text text-c-blue mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>2000 +</h5>
-                                        <span>Files</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <i class="icon feather icon-mail text-c-yellow mb-1 d-block"></i>
-                                    </div>
-                                    <div class="col-sm-8 text-md-center">
-                                        <h5>120</h5>
-                                        <span>Mails</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- widget primary card start -->
-                    <div class="card flat-card widget-primary-card">
-                        <div class="row-table">
-                            <div class="col-sm-3 card-body">
-                                <i class="feather icon-star-on"></i>
-                            </div>
-                            <div class="col-sm-9">
-                                <h4>4000 +</h4>
-                                <h6>Ratings Received</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- widget primary card end -->
+                       </div>
+                     <!-- widget primary card start -->
+                     <div class="card flat-card widget-primary-card">
+                         <div class="row-table">
+                             <div class="col-sm-3 card-body">
+                                 <i class="nav-icon fa fa-cart-plus"></i>
+                             </div>
+                             <div class="col-sm-9">
+                                 <h4>Tsh 980000/=</h4>
+                                 <h6>Total Purchases</h6>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- widget primary card end -->
                 </div>
-                <!-- Widget primary-success card end -->
+                 <!-- table card-4 end -->
+
+                  <!-- table card-5 start -->
+                <div class="col-md-12 col-xl-4">
+                    <div class="card flat-card">
+                        <div class="row-table">
+                            <div class="small-box bg-secondary text-white">
+                                <div class="inner p-4">
+                                    <div class="d-flex justify-center justify-content-between">
+                                        <h2 class="text-white">52</h2>
+                                        <i class="feather icon-users"></i>
+                                    </div>
+                                    <p class="fs-6">Total Customers</p>
+                                </div>
+                                <div class="bg-dark p-2">
+                                    <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                                        <div>
+                                            View all customers 
+                                        </div>
+                                        <div>
+                                            <i class="fs-5 fas fa-arrow-circle-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                     <!-- widget primary card start -->
+                     <div class="card flat-card widget-primary-card">
+                         <div class="row-table">
+                             <div class="col-sm-3 card-body">
+                                 <i class="feather icon-minus"></i>
+                             </div>
+                             <div class="col-sm-9">
+                                 <h4>Tsh 980000/=</h4>
+                                 <h6>Total Discounts</h6>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- widget primary card end -->
+                </div>
+                 <!-- table card-5 end -->
+
+                 <!-- table card-6 start -->
+                <div class="col-md-12 col-xl-4">
+                    <div class="card flat-card">
+                        <div class="row-table">
+                            <div class="small-box bg-secondary text-white">
+                                <div class="inner p-4">
+                                    <div class="d-flex justify-center justify-content-between">
+                                        <h2 class="text-white">7</h2>
+                                        <i class="nav-icon fa fa-shopping-bag"></i>
+                                    </div>
+                                    <p class="fs-6">Total Categories</p>
+                                </div>
+                                <div class="bg-dark p-2">
+                                    <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                                        <div>
+                                            View all categories 
+                                        </div>
+                                        <div>
+                                            <i class="fs-5 fas fa-arrow-circle-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                </div>
+                 <!-- table card-6 end -->
+
             </div>
             <!-- [ Main Content ] end -->
     </div>

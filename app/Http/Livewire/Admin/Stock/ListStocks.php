@@ -16,9 +16,11 @@ class ListStocks extends Component
     public function render()
     {
         $stocks = Stock::latest()->paginate(20);
+        $stockCount = Stock::all()->count();
         return view('livewire.admin.stock.list-stocks',
         [
-            'stocks' => $stocks
+            'stocks' => $stocks,
+            'stockCount' => $stockCount
         ]);
     }
 }
