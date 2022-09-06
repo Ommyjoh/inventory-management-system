@@ -5,13 +5,13 @@
          <div class="small-box bg-primary text-white">
              <div class="inner p-4">
                  <div class="d-flex justify-center justify-content-between">
-                     <h2 class="text-white">34</h2>
+                     <h2 class="text-white">{{ $allProducts }}</h2>
                      <i class="feather icon-layers"></i>
                  </div>
-                 <p class="fs-6">Total Products</p>
+                 <p class="fs-6">Total Stock Products</p>
              </div>
              <div class="bg-dark p-2">
-                 <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                 <a href="{{ route('admin.listStocks') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
                      <div>
                          View all products 
                      </div>
@@ -33,13 +33,13 @@
              <div class="small-box bg-danger text-white">
                  <div class="inner p-4">
                      <div class="d-flex justify-center justify-content-between">
-                         <h2 class="text-white">10</h2>
+                         <h2 class="text-white">{{ $lowStocks }}</h2>
                          <i class="feather icon-box"></i>
                      </div>
                      <p class="fs-6">Low Stock Products</p>
                  </div>
                  <div class="bg-dark p-2">
-                     <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                     <a href="{{ route('admin.listStocks') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
                          <div>
                              View all products 
                          </div>
@@ -61,15 +61,15 @@
              <div class="small-box bg-success text-white">
                  <div class="inner p-4">
                      <div class="d-flex justify-center justify-content-between">
-                         <h2 class="text-white">8</h2>
+                         <h2 class="text-white">{{ $mostStocks }}</h2>
                          <i class="feather icon-codepen"></i>
                      </div>
                      <p class="fs-6">Most Stock Products</p>
                  </div>
                  <div class="bg-dark p-2">
-                     <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                     <a href="{{ route('admin.listStocks') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
                          <div>
-                             View all products 
+                             View all stock products 
                          </div>
                          <div>
                              <i class="fs-5 fas fa-arrow-circle-right"></i>
@@ -89,7 +89,7 @@
                 <div class="small-box bg-secondary text-white">
                     <div class="inner p-4">
                         <div class="d-flex justify-center justify-content-between">
-                            <h2 class="text-white">12</h2>
+                            <h2 class="text-white">{{ $allSuppliers }}</h2>
                             <i class="nav-icon fa fa-cart-arrow-down "></i>
                         </div>
                         <p class="fs-6">Total Suppliers</p>
@@ -130,7 +130,7 @@
                 <div class="small-box bg-secondary text-white">
                     <div class="inner p-4">
                         <div class="d-flex justify-center justify-content-between">
-                            <h2 class="text-white">52</h2>
+                            <h2 class="text-white">{{ $allCustomers }}</h2>
                             <i class="feather icon-users"></i>
                         </div>
                         <p class="fs-6">Total Customers</p>
@@ -171,7 +171,7 @@
                 <div class="small-box bg-secondary text-white">
                     <div class="inner p-4">
                         <div class="d-flex justify-center justify-content-between">
-                            <h2 class="text-white">7</h2>
+                            <h2 class="text-white">{{ $allCategories }}</h2>
                             <i class="nav-icon fa fa-shopping-bag"></i>
                         </div>
                         <p class="fs-6">Total Categories</p>
