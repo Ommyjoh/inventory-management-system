@@ -75,7 +75,7 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-question-circle"></i></span><span class="pcoded-mtext">Support</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="layout-vertical.html" target="_blank">Support</a></li>
+                        <li><a href="#" target="_blank">Support</a></li>
                     </ul>
                 </li>
             </ul>

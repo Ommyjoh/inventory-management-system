@@ -13,7 +13,7 @@
              <div class="bg-dark p-2">
                  <a href="{{ route('admin.listStocks') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
                      <div>
-                         View all products 
+                         View all stock products 
                      </div>
                      <div>
                          <i class="fs-5 fas fa-arrow-circle-right"></i>
@@ -41,7 +41,7 @@
                  <div class="bg-dark p-2">
                      <a href="{{ route('admin.listStocks') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
                          <div>
-                             View all products 
+                             View all stock products 
                          </div>
                          <div>
                              <i class="fs-5 fas fa-arrow-circle-right"></i>
@@ -89,15 +89,15 @@
                 <div class="small-box bg-secondary text-white">
                     <div class="inner p-4">
                         <div class="d-flex justify-center justify-content-between">
-                            <h2 class="text-white">{{ $allSuppliers }}</h2>
-                            <i class="nav-icon fa fa-cart-arrow-down "></i>
+                            <h2 class="text-white">{{ $allProducts }}</h2>
+                            <i class="feather icon-layers"></i>
                         </div>
-                        <p class="fs-6">Total Suppliers</p>
+                        <p class="fs-6">Total Stock Products</p>
                     </div>
                     <div class="bg-dark p-2">
-                        <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                        <a href="{{ route('admin.listStocks')}}" class="small-box-footer text-white d-flex justify-center justify-content-between">
                             <div>
-                                View all products 
+                                View all stock products 
                             </div>
                             <div>
                                 <i class="fs-5 fas fa-arrow-circle-right"></i>
@@ -136,7 +136,7 @@
                         <p class="fs-6">Total Customers</p>
                     </div>
                     <div class="bg-dark p-2">
-                        <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                        <a href="{{ route('admin.listCustomers')}}" class="small-box-footer text-white d-flex justify-center justify-content-between">
                             <div>
                                 View all customers 
                             </div>
@@ -167,27 +167,27 @@
      <!-- table card-6 start -->
     <div class="col-md-12 col-xl-4">
         <div class="card flat-card">
-            <div class="row-table">
-                <div class="small-box bg-secondary text-white">
-                    <div class="inner p-4">
-                        <div class="d-flex justify-center justify-content-between">
-                            <h2 class="text-white">{{ $allCategories }}</h2>
-                            <i class="nav-icon fa fa-shopping-bag"></i>
-                        </div>
-                        <p class="fs-6">Total Categories</p>
-                    </div>
-                    <div class="bg-dark p-2">
-                        <a href="#" class="small-box-footer text-white d-flex justify-center justify-content-between">
-                            <div>
-                                View all categories 
-                            </div>
-                            <div>
-                                <i class="fs-5 fas fa-arrow-circle-right"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-           </div>
-    </div>
+         <div class="row-table">
+             <div class="small-box bg-secondary text-white">
+                 <div class="inner p-4">
+                     <div class="d-flex justify-center justify-content-between">
+                         <h2 class="text-white">{{ $allSuppliers }}</h2>
+                         <i class="nav-icon fa fa-cart-arrow-down "></i>
+                     </div>
+                     <p class="fs-6">Total Suppliers</p>
+                 </div>
+                 <div class="bg-dark p-2">
+                     <a href="{{ route('admin.listSupplies') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
+                         <div>
+                             View all suppliers 
+                         </div>
+                         <div>
+                             <i class="fs-5 fas fa-arrow-circle-right"></i>
+                         </div>
+                     </a>
+                 </div>
+             </div>
+         </div>
+        </div>
+     </div>
      <!-- table card-6 end -->
