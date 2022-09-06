@@ -6,7 +6,6 @@ use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Purchase;
-use App\Models\Stock;
 use App\Models\Supplier;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,6 +15,7 @@ class CreatePurchases extends Component
     public $state = [];
     public $supId, $catId, $prodId, $qty, $unitPrice, $discPrice;
     public $supName, $catName, $prodName, $Sid;
+    public $supplierId;
 
     public $rules = [
         'qty' => 'required',
@@ -83,6 +83,10 @@ class CreatePurchases extends Component
         $this->reset();
     }
 
+    public function getSupplierValue($id){
+        $this->supplierId = $id;
+    }
+
     public function render()
     {
         $initialPrice = intval($this->qty) * intval($this->unitPrice);
@@ -90,7 +94,7 @@ class CreatePurchases extends Component
 
         $suppliers = Supplier::all();
         $categories = Category::all();
-        $products = Product::all();
+        $products = Product::all()->where('supplier_id', $this->supplierId);
 
         return view('livewire.admin.purchases.create-purchases',
         [

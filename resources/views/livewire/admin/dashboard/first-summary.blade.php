@@ -152,7 +152,7 @@
          <div class="card flat-card widget-primary-card">
              <div class="row-table">
                  <div class="col-sm-3 card-body">
-                     <i class="feather icon-minus"></i>
+                    <i class="nav-icon fa fa-child"></i>
                  </div>
                  <div class="col-sm-9">
                      <h4>Tsh {{ $discount }}/=</h4>

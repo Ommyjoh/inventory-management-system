@@ -51,9 +51,9 @@
                     <th>Purchase No</th>
                     <th>Date</th>
                     <th>Supplier</th>
-                    <th>Category</th>
                     <th>Qty</th>
                     <th>Product Name</th>
+                    <th>Total price</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -66,9 +66,9 @@
                         <td> {{ $purchase->pNo }} </td>
                         <td> {{ $purchase->created_at }} </td>
                         <td> {{ $purchase->supplier->name }} </td>
-                        <td> {{ $purchase->category->name }} </td>
                         <td> {{ $purchase->qty }} </td>
                         <td> {{ $purchase->product->name }} </td>
+                        <td>{{ $purchase->totalPrice }}</td>
                         <td class="text-center">
                             @if ($purchase->status == "PENDING")
                                 <span class="badge bg-warning text-dark py-2 px-2">Pending</span>

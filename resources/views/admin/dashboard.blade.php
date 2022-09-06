@@ -19,10 +19,12 @@
 
             <!-- [ Main Content ] start -->
             <div class="row">
-                
+
                 <livewire:admin.dashboard.first-summary/>
 
             </div>
-            <!-- [ Main Content ] end -->
+
+            <livewire:admin.dashboard.monthly-purchase-list/>
+        <!-- [ Main Content ] end -->
     </div>
 </x-admin-layout>

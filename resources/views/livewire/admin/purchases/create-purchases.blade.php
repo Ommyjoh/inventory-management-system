@@ -15,7 +15,7 @@
 
                             <div class="row col-lg-6">
                                 <label for="Name">Supplier Name</label>
-                                <select wire:model = "state.supId" class="form-select" aria-label="Default select example">
+                                <select wire:model = "state.supId" wire:change="getSupplierValue($event.target.value)" class="form-select" aria-label="Default select example">
                                     <option selected>Choose supplier..</option>
                                     @foreach ($suppliers as $supplier)
                                         <option value="{{$supplier->id}}">{{ $supplier->name }}</option>
