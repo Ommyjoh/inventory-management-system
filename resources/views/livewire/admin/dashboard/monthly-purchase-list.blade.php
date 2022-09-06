@@ -30,6 +30,15 @@
                 </tr>
             @empty
                 
+                <tr>
+                    <td colspan="7" class="text-center">
+                        <div class="d-flex flex-column align-items-center justify-content-center">
+                            <img style="width: 200px" src="{{ asset('backend/dist/assets/images/notfound.png') }}" alt="">
+                            <span class="mt-2">No Purchase This Month!</span>
+                        </div>
+                    </td>
+                </tr>
+
             @endforelse
     </table>
 </div>
