@@ -114,7 +114,7 @@
                      <i class="nav-icon fa fa-cart-plus"></i>
                  </div>
                  <div class="col-sm-9">
-                     <h4>Tsh 980000/=</h4>
+                     <h4>Tsh {{ $sumPurchases }}/=</h4>
                      <h6>Total Purchases</h6>
                  </div>
              </div>
@@ -155,7 +155,7 @@
                      <i class="feather icon-minus"></i>
                  </div>
                  <div class="col-sm-9">
-                     <h4>Tsh 980000/=</h4>
+                     <h4>Tsh {{ $discount }}/=</h4>
                      <h6>Total Discounts</h6>
                  </div>
              </div>
