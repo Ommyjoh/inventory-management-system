@@ -2,13 +2,13 @@
 <div class="col-md-12 col-xl-4">
     <div class="card flat-card">
      <div class="row-table">
-         <div class="small-box bg-primary text-white">
+         <div class="small-box bg-success text-white">
              <div class="inner p-4">
                  <div class="d-flex justify-center justify-content-between">
-                     <h2 class="text-white">{{ $allProducts }}</h2>
+                     <h2 class="text-white">{{ $mostStocks }}</h2>
                      <i class="feather icon-layers"></i>
                  </div>
-                 <p class="fs-6">Total Stock Products</p>
+                 <p class="fs-6">Most Stock Products</p>
              </div>
              <div class="bg-dark p-2">
                  <a href="{{ route('admin.listStocks') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
@@ -30,7 +30,7 @@
     <div class="col-md-12 col-xl-4">
         <div class="card flat-card">
          <div class="row-table">
-             <div class="small-box bg-danger text-white">
+             <div class="small-box bg-warning text-white">
                  <div class="inner p-4">
                      <div class="d-flex justify-center justify-content-between">
                          <h2 class="text-white">{{ $lowStocks }}</h2>
@@ -58,13 +58,13 @@
     <div class="col-md-12 col-xl-4">
         <div class="card flat-card">
          <div class="row-table">
-             <div class="small-box bg-success text-white">
+             <div class="small-box bg-danger text-white">
                  <div class="inner p-4">
                      <div class="d-flex justify-center justify-content-between">
-                         <h2 class="text-white">{{ $mostStocks }}</h2>
+                         <h2 class="text-white">{{ $outOfStock }}</h2>
                          <i class="feather icon-codepen"></i>
                      </div>
-                     <p class="fs-6">Most Stock Products</p>
+                     <p class="fs-6">Out of Stock Products</p>
                  </div>
                  <div class="bg-dark p-2">
                      <a href="{{ route('admin.listStocks') }}" class="small-box-footer text-white d-flex justify-center justify-content-between">
@@ -90,7 +90,7 @@
                     <div class="inner p-4">
                         <div class="d-flex justify-center justify-content-between">
                             <h2 class="text-white">{{ $allProducts }}</h2>
-                            <i class="feather icon-layers"></i>
+                            <i class="fs-5 fas fa-tags"></i>
                         </div>
                         <p class="fs-6">Total Stock Products</p>
                     </div>
