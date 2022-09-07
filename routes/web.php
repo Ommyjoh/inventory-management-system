@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Livewire\Admin\Categories\ListCategories;
 use App\Http\Livewire\Admin\Customers\ListCustomers;
+use App\Http\Livewire\Admin\Invoice\ListInvoice;
 use App\Http\Livewire\Admin\Products\ListProducts;
 use App\Http\Livewire\Admin\Purchases\CreatePurchases;
 use App\Http\Livewire\Admin\Purchases\ListPurchases;
@@ -40,3 +41,5 @@ Route::get('admin/listpurchases', ListPurchases::class)->name('admin.listPurchas
 Route::get('admin/createpurchases', CreatePurchases::class)->name('admin.createPurchases');
 
 Route::get('admin/liststocks', ListStocks::class)->name('admin.listStocks');
+
+Route::get('admin/listinvoices', ListInvoice::class)->name('admin.listInvoices');

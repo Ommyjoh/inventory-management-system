@@ -49,9 +49,9 @@
                 </li>
 
                 <li class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-cart-arrow-down"></i></span><span class="pcoded-mtext">Manage Invoice</span></a>
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-cart-arrow-down"></i></span><span class="pcoded-mtext">Manage Invoices</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="#">All Invoices</a></li>
+                        <li><a href="{{ route('admin.listInvoices') }}">All Invoices</a></li>
                         <li><a href="#">Approval Invoices</a></li>
                         <li><a href="#">Daily Invoice Report</a></li>
                     </ul>
