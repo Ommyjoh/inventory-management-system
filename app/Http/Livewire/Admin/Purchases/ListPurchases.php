@@ -41,7 +41,6 @@ class ListPurchases extends Component
                 'category_id' => $this->approvePurchase->category_id,
                 'product_id' => $this->approvePurchase->product_id,
                 'in_qty' => $this->approvePurchase->qty,
-                'out_qty' => 0,
                 'stock' => $this->approvePurchase->qty,
             ]);
 

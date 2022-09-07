@@ -55,7 +55,11 @@
                             <span class="badge p-2 rounded-pill bg-primary">{{ $stock->in_qty }}</span>
                         </td>
                         <td class="text-center">
-                            <span class="badge p-2 rounded-pill bg-info">{{ $stock->out_qty }}</span>
+                            @if ($stock->out_qty == NULL)
+                                <span class="badge p-2 rounded-pill bg-info">0</span>
+                            @else
+                                <span class="badge p-2 rounded-pill bg-info">{{ $stock->out_qty }}</span>
+                            @endif
                         </td>
                         <td class="text-center">
                             <span class="badge p-2 rounded-pill bg-danger">{{ $stock->stock }}</span>
