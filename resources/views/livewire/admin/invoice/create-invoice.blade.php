@@ -38,7 +38,11 @@
 
                             <div class="row col-lg-4">
                                 <label for="Name">Currently Stock</label>
-                                <input value="{{ $stock }}" type="text" class="bg-dark text-white fw-bold form-control" readonly>
+                                @if ($stock == 0)
+                                    <input value="{{ $stock }}" type="text" class="bg-danger text-white fw-bold form-control" readonly>
+                                @else
+                                    <input value="{{ $stock }}" type="text" class="bg-dark text-white fw-bold form-control" readonly>
+                                @endif
                             </div>
 
                             <div class="row col-lg-4">
