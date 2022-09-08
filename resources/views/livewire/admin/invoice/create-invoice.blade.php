@@ -16,18 +16,20 @@
                             <div class="row col-lg-4">
                                 <label for="Name">Customer Name</label>
                                 <select wire:model='state.custNo' class="form-select" aria-label="Default select example">
-                                    <option selected>Choose supplier..</option>
-                                    <option value="1">Emmanuel Boshe</option>
-                                    <option value="2">Emmanuel Boshe</option>
+                                    <option selected>Choose customer..</option>
+                                    @foreach ($customers as $customer)
+                                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="row col-lg-4">
                                 <label for="Name">Supplier Name</label>
-                                <select wire:model='state.supNo' class="form-select" aria-label="Default select example">
+                                <select wire:model='state.supNo' wire:change='getSupplierId($event.target.value)' class="form-select" aria-label="Default select example">
                                     <option selected>Choose supplier..</option>
-                                    <option value="1">Emmanuel Boshe</option>
-                                    <option value="2">Emmanuel Boshe</option>
+                                    @foreach ($suppliers as $supplier)
+                                        <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -52,8 +54,9 @@
                                 <label for="Name">Product Name</label>
                                 <select wire:model='state.prodNo' class="form-select" aria-label="Default select example">
                                     <option selected>Choose product..</option>
-                                    <option value="1">Emmanuel Boshe</option>
-                                    <option value="1">Emmanuel Boshe</option>
+                                    @foreach ($products as $product)
+                                        <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -81,10 +84,10 @@
                 
                             <tbody>
                                <tr>
-                                    <td>Emmanuel Boshe</td>
-                                    <td>Azam Company</td>
-                                    <td>Drinks</td>
-                                    <td>Azam Energy</td>
+                                    <td>{{ $custName }}</td>
+                                    <td>{{ $supName }}</td>
+                                    <td>{{ $catName }}</td>
+                                    <td>{{ $prodName }}</td>
                                     <td><input class="form-control" type="number"></td>
                                     <td><input class="form-control" type="number"></td>
                                     <td><input value="900" class="bg-dark text-white fw-bold form-control" type="number" readonly></td>

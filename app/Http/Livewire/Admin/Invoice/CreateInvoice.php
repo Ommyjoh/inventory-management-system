@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class CreateInvoice extends Component
 {
-    public $invNumber;
+    public $invNumber, $supplierId;
     public $state = [];
     public $custName, $supName, $catName, $prodName;
 
@@ -26,14 +26,28 @@ class CreateInvoice extends Component
         
         $this->invNumber = "T-".rand(1000, 9999)."-".rand(10, 99)."-". rand(100, 999);
 
-        $this->custName = Customer::find($this->state['custNo']);
-        $this->supName = Supplier::find($this->state['supNo']);
-        $this->catName = Category::find($this->state['catNo']);
-        $this->prodName = Product::find($this->state['prodNo']);
+        $customer = Customer::find($this->state['custNo']);
+        $supplier= Supplier::find($this->state['supNo']);
+        $category= Category::find($this->state['catNo']);
+        $product= Product::find($this->state['prodNo']);
 
+        $this->custName = $customer->name;
+        $this->supName = $supplier->name;
+        $this->catName = $category->name;
+        $this->prodName = $product->name;
+
+    }
+
+    public function getSupplierId($id){
+        $this->supplierId = $id;
     }
     public function render()
     {
-        return view('livewire.admin.invoice.create-invoice');
+        return view('livewire.admin.invoice.create-invoice',
+        [
+            'customers' => Customer::latest()->get(),
+            'suppliers' => Supplier::latest()->get(),
+            'products' => Product::where('supplier_id', $this->supplierId)->latest()->get()
+        ]);
     }
 }
