@@ -10,12 +10,12 @@
                         <div class="d-flex justify-content-between mb-4">
                             <div class="row col-lg-4">
                                 <label for="Name">Invoice No</label>
-                                <input value="IN534670" type="text" class="bg-dark text-white fw-bold form-control" readonly>
+                                <input value="{{ $invNumber }}" type="text" class="bg-dark text-white fw-bold form-control" readonly>
                             </div>
 
                             <div class="row col-lg-4">
                                 <label for="Name">Customer Name</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select wire:model='state.custNo' class="form-select" aria-label="Default select example">
                                     <option selected>Choose supplier..</option>
                                     <option value="1">Emmanuel Boshe</option>
                                     <option value="2">Emmanuel Boshe</option>
@@ -24,7 +24,7 @@
 
                             <div class="row col-lg-4">
                                 <label for="Name">Supplier Name</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select wire:model='state.supNo' class="form-select" aria-label="Default select example">
                                     <option selected>Choose supplier..</option>
                                     <option value="1">Emmanuel Boshe</option>
                                     <option value="2">Emmanuel Boshe</option>
@@ -41,7 +41,7 @@
 
                             <div class="row col-lg-4">
                                 <label for="Name">Category Name</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select wire:model='state.catNo' class="form-select" aria-label="Default select example">
                                     <option selected>Choose category..</option>
                                     <option value="1">Emmanuel Boshe</option>
                                     <option value="2">Emmanuel Boshe</option>
@@ -50,7 +50,7 @@
     
                             <div class="row col-lg-4">
                                 <label for="Name">Product Name</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select wire:model='state.prodNo' class="form-select" aria-label="Default select example">
                                     <option selected>Choose product..</option>
                                     <option value="1">Emmanuel Boshe</option>
                                     <option value="1">Emmanuel Boshe</option>

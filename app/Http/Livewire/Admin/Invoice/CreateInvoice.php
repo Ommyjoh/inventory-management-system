@@ -6,9 +6,12 @@ use Livewire\Component;
 
 class CreateInvoice extends Component
 {
+    public $invNumber;
+    public $state = [];
 
     public function approveInvoice(){
-        dd('Here');
+        
+        $this->invNumber = "T-".rand(1000, 9999)."-".rand(10, 99)."-". rand(100, 999);
     }
     public function render()
     {
