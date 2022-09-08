@@ -62,7 +62,7 @@
 
 
                         <div class="mt-4">
-                            <button type="button" class="btn btn-info mr-2" data-bs-dismiss="modal"><i class="fa fa-plus mr-1"></i><a href="#" class="text-white">Prove invoice</a></button>
+                            <button wire:click='approveInvoice' type="button" class="btn btn-info mr-2" data-bs-dismiss="modal"><i class="fa fa-plus mr-1"></i><a href="#" class="text-white">Prove invoice</a></button>
                         </div>
 
                         <table class="table table-bordered mt-2">
