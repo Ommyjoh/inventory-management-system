@@ -20,7 +20,7 @@
 
     <div class="card flat-card">
         <div class="d-flex justify-content-end m-2">
-                <a href="#"><button style="border-radius: 20px" class="btn btn-primary"> <i class="nav-icon fa fa-plus-circle"></i> Add Invoice</button></a>
+                <a href="{{ route('admin.createInvoice') }}"><button style="border-radius: 20px" class="btn btn-primary"> <i class="nav-icon fa fa-plus-circle"></i> Add Invoice</button></a>
         </div>
     
         <div class="d-flex justify-content-between m-2 align-items-center">
