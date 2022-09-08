@@ -9,12 +9,12 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-4">
                             <div class="row col-lg-4">
-                                <label for="Name">Invoice No</label>
+                                <label for="Name" class="fw-bold">Invoice No</label>
                                 <input value="{{ $invNumber }}" type="text" class="bg-dark text-white fw-bold form-control" readonly>
                             </div>
 
                             <div class="row col-lg-4">
-                                <label for="Name">Customer Name</label>
+                                <label for="Name" class="fw-bold">Customer Name</label>
                                 <select wire:model='state.custNo' class="form-select" aria-label="Default select example">
                                     <option selected>Choose customer..</option>
                                     @foreach ($customers as $customer)
@@ -24,7 +24,7 @@
                             </div>
 
                             <div class="row col-lg-4">
-                                <label for="Name">Supplier Name</label>
+                                <label for="Name" class="fw-bold">Supplier Name</label>
                                 <select wire:model='state.supNo' wire:change='getSupplierId($event.target.value)' class="form-select" aria-label="Default select example">
                                     <option selected>Choose supplier..</option>
                                     @foreach ($suppliers as $supplier)
@@ -37,7 +37,7 @@
                         <div class="d-flex justify-content-between">
 
                             <div class="row col-lg-4">
-                                <label for="Name">Currently Stock</label>
+                                <label for="Name" class="fw-bold">Currently Stock</label>
                                 @if ($stock == 0)
                                     <input value="{{ $stock }}" type="text" class="bg-danger text-white fw-bold form-control" readonly>
                                 @else
@@ -46,7 +46,7 @@
                             </div>
 
                             <div class="row col-lg-4">
-                                <label for="Name">Category Name</label>
+                                <label for="Name" class="fw-bold">Category Name</label>
                                 <select wire:model='state.catNo' wire:change='getCategoryId($event.target.value)' class="form-select" aria-label="Default select example">
                                     <option selected>Choose category..</option>
                                     @foreach ($categories as $category)
@@ -56,7 +56,7 @@
                             </div>
     
                             <div class="row col-lg-4">
-                                <label for="Name">Product Name</label>
+                                <label for="Name" class="fw-bold">Product Name</label>
                                 <select wire:model='state.prodNo' wire:change='getProductId($event.target.value)' class="form-select" aria-label="Default select example">
                                     <option selected>Choose product..</option>
                                     @foreach ($products as $product)
