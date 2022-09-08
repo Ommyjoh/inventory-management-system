@@ -70,7 +70,7 @@ class CreateInvoice extends Component
             'customers' => Customer::latest()->get(),
             'suppliers' => Supplier::latest()->get(),
             'products' => Product::where('supplier_id', $this->supplierId)->latest()->get(),
-            
+            'categories' => Category::latest()->get()
         ]);
     }
 }

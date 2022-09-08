@@ -41,7 +41,7 @@
                                 @if ($stock == 0)
                                     <input value="{{ $stock }}" type="text" class="bg-danger text-white fw-bold form-control" readonly>
                                 @else
-                                    <input value="{{ $stock }}" type="text" class="bg-dark text-white fw-bold form-control" readonly>
+                                    <input value="{{ $stock }}" type="text" class="bg-success text-white fw-bold form-control" readonly>
                                 @endif
                             </div>
 
@@ -49,8 +49,9 @@
                                 <label for="Name">Category Name</label>
                                 <select wire:model='state.catNo' wire:change='getCategoryId($event.target.value)' class="form-select" aria-label="Default select example">
                                     <option selected>Choose category..</option>
-                                    <option value="1">Emmanuel Boshe</option>
-                                    <option value="2">Emmanuel Boshe</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
     
