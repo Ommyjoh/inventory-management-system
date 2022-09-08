@@ -69,9 +69,15 @@
 
 
 
-                        <div class="mt-4">
-                            <button wire:click='approveInvoice' type="button" class="btn btn-info mr-2" data-bs-dismiss="modal"><i class="fa fa-plus mr-1"></i><a href="#" class="text-white">Prove invoice</a></button>
-                        </div>
+                        @if ($stock == 0)
+                            <div class="mt-4">
+                                <button disabled wire:click='approveInvoice' type="button" class="btn btn-info mr-2" data-bs-dismiss="modal"><i class="fa fa-plus mr-1"></i><a href="#" class="text-white">Prove invoice</a></button>
+                            </div>
+                        @else
+                            <div class="mt-4">
+                                <button wire:click='approveInvoice' type="button" class="btn btn-info mr-2" data-bs-dismiss="modal"><i class="fa fa-plus mr-1"></i><a href="#" class="text-white">Prove invoice</a></button>
+                            </div>
+                        @endif
 
                         <table class="table table-bordered mt-2">
 
@@ -112,9 +118,15 @@
                 
                         </table>
 
-                        <div class="mt-2">
-                            <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart  mr-1"></i>Store Invoice</button>
-                        </div>
+                        @if ($stock == 0)
+                            <div class="mt-2">
+                                <button disabled id="submit" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart  mr-1"></i>Store Invoice</button>
+                            </div>
+                        @else
+                            <div class="mt-2">
+                                <button id="submit" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart  mr-1"></i>Store Invoice</button>
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-6">
