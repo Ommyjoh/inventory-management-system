@@ -38,12 +38,12 @@
 
                             <div class="row col-lg-4">
                                 <label for="Name">Currently Stock</label>
-                                <input value="60" type="text" class="bg-dark text-white fw-bold form-control" readonly>
+                                <input value="{{ $stock }}" type="text" class="bg-dark text-white fw-bold form-control" readonly>
                             </div>
 
                             <div class="row col-lg-4">
                                 <label for="Name">Category Name</label>
-                                <select wire:model='state.catNo' class="form-select" aria-label="Default select example">
+                                <select wire:model='state.catNo' wire:change='getCategoryId($event.target.value)' class="form-select" aria-label="Default select example">
                                     <option selected>Choose category..</option>
                                     <option value="1">Emmanuel Boshe</option>
                                     <option value="2">Emmanuel Boshe</option>
@@ -52,7 +52,7 @@
     
                             <div class="row col-lg-4">
                                 <label for="Name">Product Name</label>
-                                <select wire:model='state.prodNo' class="form-select" aria-label="Default select example">
+                                <select wire:model='state.prodNo' wire:change='getProductId($event.target.value)' class="form-select" aria-label="Default select example">
                                     <option selected>Choose product..</option>
                                     @foreach ($products as $product)
                                         <option value="{{ $product->id }}">{{ $product->name }}</option>
