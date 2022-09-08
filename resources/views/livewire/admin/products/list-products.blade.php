@@ -98,7 +98,7 @@
                         <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Product Name</label>
-                                    <input type="text" wire:model.defer="state.name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Full Name">
+                                    <input type="text" wire:model.defer="state.name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Product Name">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

@@ -96,14 +96,14 @@
                         <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Category Name</label>
-                                    <input type="text" wire:model.defer="state.name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Full Name">
+                                    <input type="text" wire:model.defer="state.name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Category Name">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="code" class="form-label">Category Code</label>
-                                    <input type="text" wire:model.defer="state.code" class="form-control @error('code') is-invalid @enderror" placeholder="Enter Phone Number">
+                                    <input type="text" wire:model.defer="state.code" class="form-control @error('code') is-invalid @enderror" placeholder="Enter Category Code">
                                     @error('code')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror

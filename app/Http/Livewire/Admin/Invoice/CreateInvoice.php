@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Invoice;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Validator;
 
 class CreateInvoice extends Component
 {
@@ -10,6 +11,13 @@ class CreateInvoice extends Component
     public $state = [];
 
     public function approveInvoice(){
+
+        Validator::make($this->state, [
+            'custNo' =>'required',
+            'supNo' => 'required',
+            'catNo' => 'required',
+            'prodNo' => 'required'
+        ])->validate();
         
         $this->invNumber = "T-".rand(1000, 9999)."-".rand(10, 99)."-". rand(100, 999);
     }
