@@ -46,6 +46,20 @@ class ListApprovalInvoice extends Component
         $this->dispatchBrowserEvent('approvalSuccessModal', ['message'=>'Invoice Approved Successful!']);
     }
 
+    public function deleteAlert($id){
+
+        $this->deleteId = $id;
+        $this->dispatchBrowserEvent('deleteConfirmation');
+    }
+
+    public function deleteInvoice(){
+
+        $invoice  = Invoice::findOrFail($this->deleteId);
+        
+        $invoice->delete();
+        $this->dispatchBrowserEvent('deletedSuccessModal', ['message' => 'Invoice Deleted Successfully!']);
+    }
+
     
     public function render()
     {
