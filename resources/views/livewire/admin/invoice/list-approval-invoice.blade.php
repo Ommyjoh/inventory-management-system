@@ -25,7 +25,7 @@
            </div>
 
            <div class="btn-group" role="group" aria-label="Basic outlined example">
-               <h5 class="pr-4">Total 41 Invoices</h5>
+               <h5 class="pr-4">Total of {{ $invoicesCount }} Invoices</h5>
            </div>
        </div>
 
@@ -35,9 +35,10 @@
                <tr>
                    <th style="width: 10px">#</th>
                    <th>Invoice No</th>
+                   <th>Date</th>
                    <th>Customer Name</th>
                    <th>Product Name</th>
-                   <th>Date</th>
+                   <th>Qty</th>
                    <th>Amount</th>
                    <th>Action</th>
                </tr>
@@ -48,9 +49,10 @@
                    <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $invoice->iNo }}</td>
+                        <td>{{ $invoice->created_at }}</td>
                         <td>{{ $invoice->customer->name }}</td>
                         <td>{{ $invoice->product->name }}</td>
-                        <td>{{ $invoice->created_at }}</td>
+                        <td>{{ $invoice->qty }}</td>
                         <td>{{ $invoice->totalPrice }}</td>
                         <td class="text-center">
                             <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
@@ -68,6 +70,10 @@
            </tbody>
 
        </table>
+
+       <div class="d-flex justify-content-center">
+        {{ $invoices->links() }}
+        </div>
    </div>
 
 </div>

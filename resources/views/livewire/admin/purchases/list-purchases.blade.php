@@ -97,10 +97,10 @@
             </tbody>
 
         </table>
-    </div>
 
-    <div class="d-flex justify-content-center">
-        {{ $purchases->links() }}
+        <div class="d-flex justify-content-center">
+            {{ $purchases->links() }}
+        </div>
     </div>
 
 </div>
