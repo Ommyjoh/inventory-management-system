@@ -52,7 +52,7 @@
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-file"></i></span><span class="pcoded-mtext">Manage Invoices</span></a>
                     <ul class="pcoded-submenu">
                         <li><a href="{{ route('admin.listInvoices') }}">All Invoices</a></li>
-                        <li><a href="#">Approval Invoices</a></li>
+                        <li><a href="{{ route('admin.listApprovalInvoices') }}">Approval Invoices</a></li>
                         <li><a href="#">Daily Invoice Report</a></li>
                     </ul>
                 </li>

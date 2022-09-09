@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Livewire\Admin\Categories\ListCategories;
 use App\Http\Livewire\Admin\Customers\ListCustomers;
 use App\Http\Livewire\Admin\Invoice\CreateInvoice;
+use App\Http\Livewire\Admin\Invoice\ListApprovalInvoice;
 use App\Http\Livewire\Admin\Invoice\ListInvoice;
 use App\Http\Livewire\Admin\Products\ListProducts;
 use App\Http\Livewire\Admin\Purchases\CreatePurchases;
@@ -46,3 +47,5 @@ Route::get('admin/liststocks', ListStocks::class)->name('admin.listStocks');
 Route::get('admin/listinvoices', ListInvoice::class)->name('admin.listInvoices');
 
 Route::get('admin/createinvoice', CreateInvoice::class)->name('admin.createInvoice');
+
+Route::get('admin/listapprovalinvoices', ListApprovalInvoice::class)->name('admin.listApprovalInvoices');
