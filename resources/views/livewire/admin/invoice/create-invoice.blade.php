@@ -118,7 +118,7 @@
                 
                         </table>
 
-                        @if ($stock == 0 || $customerId == "" || $qty == "" || $unitPrice)
+                        @if ($stock == 0 || $customerId == "" || $qty == "" || $unitPrice == "")
                             <div class="mt-2">
                                 <button disabled id="submit" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart  mr-1"></i>Store Invoice</button>
                             </div>
