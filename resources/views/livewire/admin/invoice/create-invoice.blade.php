@@ -99,9 +99,9 @@
                                     <td>{{ $supName }}</td>
                                     <td>{{ $catName }}</td>
                                     <td>{{ $prodName }}</td>
-                                    <td><input class="form-control" type="number"></td>
-                                    <td><input class="form-control" type="number"></td>
-                                    <td><input value="900" class="bg-dark text-white fw-bold form-control" type="number" readonly></td>
+                                    <td><input wire:model="qty" class="form-control" type="number"></td>
+                                    <td><input wire:model="unitPrice" class="form-control" type="number"></td>
+                                    <td><input value="{{ $initialPrice }}" class="bg-dark text-white fw-bold form-control" type="number" readonly></td>
                                 </tr>
 
                                 <tr>
@@ -118,7 +118,7 @@
                 
                         </table>
 
-                        @if ($stock == 0 || $customerId == "")
+                        @if ($stock == 0 || $customerId == "" || $qty == "" || $unitPrice)
                             <div class="mt-2">
                                 <button disabled id="submit" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart  mr-1"></i>Store Invoice</button>
                             </div>

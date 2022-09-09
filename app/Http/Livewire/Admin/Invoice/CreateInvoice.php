@@ -8,13 +8,13 @@ use App\Models\Product;
 use App\Models\Stock;
 use App\Models\Supplier;
 use Livewire\Component;
-use Illuminate\Support\Facades\Validator;
 
 class CreateInvoice extends Component
 {
     public $invNumber, $supplierId, $categoryId, $productId, $customerId, $stock;
     public $state = [];
     public $custName, $supName, $catName, $prodName;
+    public $qty, $unitPrice;
 
     public function approveInvoice(){
 
@@ -65,12 +65,16 @@ class CreateInvoice extends Component
             $this->stock = $stockNo[0]['stock'];
         }
 
+        $initialPrice = intval($this->qty) * intval($this->unitPrice);
+        // $totalPrice = $initialPrice - intval($this->discPrice);
+
         return view('livewire.admin.invoice.create-invoice',
         [
             'customers' => Customer::latest()->get(),
             'suppliers' => Supplier::latest()->get(),
             'products' => Product::where('supplier_id', $this->supplierId)->latest()->get(),
-            'categories' => Category::latest()->get()
+            'categories' => Category::latest()->get(),
+            'initialPrice' => $initialPrice
         ]);
     }
 }
