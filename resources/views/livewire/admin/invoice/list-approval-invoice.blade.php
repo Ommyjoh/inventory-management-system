@@ -52,7 +52,8 @@
                        <td>20-12-2022</td>
                        <td>120000</td>
                        <td class="text-center">
-                           <a href="#"> <i class="fa fa-print fs-6 text-primary pr-2" title="print"></i> </a>
+                        <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
+                        <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
                        </td>
                    </tr>
            </tbody>
