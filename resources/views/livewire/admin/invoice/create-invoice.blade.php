@@ -15,8 +15,8 @@
 
                             <div class="row col-lg-4">
                                 <label for="Name" class="fw-bold">Customer Name</label>
-                                <select wire:model='state.custNo' class="form-select" aria-label="Default select example">
-                                    <option selected>Choose customer..</option>
+                                <select wire:model='state.custNo' wire:change='getCustomerId($event.target.value)' class="form-select" aria-label="Default select example">
+                                    <option value = "" selected>Choose customer..</option>
                                     @foreach ($customers as $customer)
                                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                                     @endforeach
@@ -69,7 +69,7 @@
 
 
 
-                        @if ($stock == 0)
+                        @if ($stock == 0 || $customerId == "")
                             <div class="mt-4">
                                 <button disabled wire:click='approveInvoice' type="button" class="btn btn-info mr-2" data-bs-dismiss="modal"><i class="fa fa-plus mr-1"></i><a href="#" class="text-white">Prove invoice</a></button>
                             </div>
@@ -118,7 +118,7 @@
                 
                         </table>
 
-                        @if ($stock == 0)
+                        @if ($stock == 0 || $customerId == "")
                             <div class="mt-2">
                                 <button disabled id="submit" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart  mr-1"></i>Store Invoice</button>
                             </div>

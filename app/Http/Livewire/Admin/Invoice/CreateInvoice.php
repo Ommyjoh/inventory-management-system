@@ -12,20 +12,11 @@ use Illuminate\Support\Facades\Validator;
 
 class CreateInvoice extends Component
 {
-    public $invNumber, $supplierId, $categoryId, $productId, $stock;
+    public $invNumber, $supplierId, $categoryId, $productId, $customerId, $stock;
     public $state = [];
     public $custName, $supName, $catName, $prodName;
 
     public function approveInvoice(){
-
-        Validator::make($this->state, [
-            'custNo' =>'required',
-            'supNo' => 'required',
-            'catNo' => 'required',
-            'prodNo' => 'required'
-        ])->validate();
-        
-        
 
         $customer = Customer::find($this->state['custNo']);
         $supplier= Supplier::find($this->state['supNo']);
@@ -51,6 +42,11 @@ class CreateInvoice extends Component
         $this->invNumber = "T-".rand(1000, 9999)."-".rand(10, 99)."-". rand(100, 999);
         $this->productId = $id;
     }
+
+    public function getCustomerId($id){
+        $this->customerId = $id;
+    }
+
     public function render()
     {
 
