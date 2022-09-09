@@ -55,8 +55,8 @@
                         <td>{{ $invoice->qty }}</td>
                         <td>{{ $invoice->totalPrice }}</td>
                         <td class="text-center">
-                            <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
-                            <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
+                            <a wire:click.prevent = "approveInvoiceAlert({{$invoice}})" href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
+                            <a wire:click.prevent = "deleteAlert({{$invoice->id}})" href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
                         </td>
                     </tr>
                    @empty
@@ -77,3 +77,65 @@
    </div>
 
 </div>
+
+<x-delete-confirmation></x-delete-confirmation>
+
+@push('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    window.addEventListener('approvalConfirmation', event=>{
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success ml-2',
+            cancelButton: 'btn btn-danger mr-2'
+        },
+        buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+        title: 'Approve this invoice?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, approve!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+        }).then((result) => {
+        if (result.isConfirmed) {
+            
+            Livewire.emit('approve');
+
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Invoice not approved!',
+            'error'
+            )
+        }
+        })
+    })
+
+
+    window.addEventListener('approvalSuccessModal', event=>{
+
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+        swalWithBootstrapButtons.fire(
+        'Approved!',
+        event.detail.message,
+        'success'
+    )
+
+    })
+</script>
+
+@endpush
