@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\Invoice;
 
 use App\Models\Category;
 use App\Models\Customer;
+use App\Models\Invoice;
 use App\Models\Product;
 use App\Models\Stock;
 use App\Models\Supplier;
@@ -48,7 +49,25 @@ class CreateInvoice extends Component
     }
 
     public function storeInvoice(){
-        
+
+        $initialPrice = intval($this->qty) * intval($this->unitPrice);
+        $totalPrice = $initialPrice - intval($this->discPrice);
+        $status = "PENDING";
+
+        Invoice::create([
+            'customer_id' => $this->state['custNo'],
+            'supplier_id' => $this->state['supNo'],
+            'category_id' => $this->state['catNo'],
+            'product_id' => $this->state['prodNo'],
+            'iNo' => $this->invNumber,
+            'qty' => $this->qty,
+            'discount' => $this->discPrice,
+            'totalPrice' => $totalPrice,
+            'status' => $status
+        ]);
+
+        $this->dispatchBrowserEvent('success', ['message'=>'Invoice Added Successfully!']);
+        $this->reset();
     }
 
     public function render()
