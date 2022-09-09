@@ -106,12 +106,12 @@
 
                                 <tr>
                                     <td colspan="6" class="text-end fw-bold fs-5">Discount</td>
-                                    <td><input class="form-control" type="number"></td>
+                                    <td><input wire:model="discPrice" class="form-control" type="number"></td>
                                 </tr>
 
                                 <tr>
                                     <td colspan="6" class="text-end fw-bold fs-5">Total Price</td>
-                                    <td><input value="600" class="bg-dark text-white fw-bold form-control" type="number" readonly></td>
+                                    <td><input value="{{ $totalPrice }}" class="bg-dark text-white fw-bold form-control" type="number" readonly></td>
                                 </tr>
                 
                             </tbody>

@@ -14,7 +14,7 @@ class CreateInvoice extends Component
     public $invNumber, $supplierId, $categoryId, $productId, $customerId, $stock;
     public $state = [];
     public $custName, $supName, $catName, $prodName;
-    public $qty, $unitPrice;
+    public $qty, $unitPrice, $discPrice;
 
     public function approveInvoice(){
 
@@ -66,7 +66,7 @@ class CreateInvoice extends Component
         }
 
         $initialPrice = intval($this->qty) * intval($this->unitPrice);
-        // $totalPrice = $initialPrice - intval($this->discPrice);
+        $totalPrice = $initialPrice - intval($this->discPrice);
 
         return view('livewire.admin.invoice.create-invoice',
         [
@@ -74,7 +74,8 @@ class CreateInvoice extends Component
             'suppliers' => Supplier::latest()->get(),
             'products' => Product::where('supplier_id', $this->supplierId)->latest()->get(),
             'categories' => Category::latest()->get(),
-            'initialPrice' => $initialPrice
+            'initialPrice' => $initialPrice,
+            'totalPrice' => $totalPrice
         ]);
     }
 }

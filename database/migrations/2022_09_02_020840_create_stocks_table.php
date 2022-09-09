@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('supplier_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->foreignId('product_id')->constrained();
-            $table->integer('in_qty');
-            $table->integer('out_qty');
+            $table->integer('in_qty')->nullable();
+            $table->integer('out_qty')->nullable();
             $table->integer('stock');
             $table->timestamps();
         });
