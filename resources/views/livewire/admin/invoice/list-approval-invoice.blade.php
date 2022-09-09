@@ -44,18 +44,27 @@
            </thead>
 
            <tbody>
+                   @forelse ($invoices as $invoice)
                    <tr>
-                       <td>1</td>
-                       <td>IN234589</td>
-                       <td>Emmanuel Boshe</td>
-                       <td>Azam Energy</td>
-                       <td>20-12-2022</td>
-                       <td>120000</td>
-                       <td class="text-center">
-                        <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
-                        <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
-                       </td>
-                   </tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $invoice->iNo }}</td>
+                        <td>{{ $invoice->customer->name }}</td>
+                        <td>{{ $invoice->product->name }}</td>
+                        <td>{{ $invoice->created_at }}</td>
+                        <td>{{ $invoice->totalPrice }}</td>
+                        <td class="text-center">
+                            <a href="#"> <i class="fa fa-check-circle  fs-6 text-primary pr-2" title="approve"></i> </a>
+                            <a href="#"><i class="nav-icon fa fa-trash fs-6 text-danger" title="delete"></i></a>
+                        </td>
+                    </tr>
+                   @empty
+                        <td colspan="9" class="text-center">
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                <img style="width: 200px" src="{{ asset('backend/dist/assets/images/notfound.png') }}" alt="">
+                                <span class="mt-2">No Invoice Records!</span>
+                            </div>
+                        </td>
+                   @endforelse
            </tbody>
 
        </table>
