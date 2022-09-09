@@ -3,7 +3,7 @@
     <div class="card flat-card">
         <h4 class="text-center bg-primary text-white p-2">Fill Invoice</h4>
         <div class="col-lg-12">
-            <form autocomplete="off">
+            <form wire:submit.prevent = "storeInvoice" autocomplete="off">
                 @csrf
                 <div>
                     <div class="card-body">

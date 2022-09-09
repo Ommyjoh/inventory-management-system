@@ -47,6 +47,10 @@ class CreateInvoice extends Component
         $this->customerId = $id;
     }
 
+    public function storeInvoice(){
+        
+    }
+
     public function render()
     {
 
